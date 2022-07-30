@@ -37,7 +37,7 @@ const App: React.FC = () => {
     // Reveal animations
     document.body.classList.contains('has-animations') && ScrollReveal().reveal('.feature', {
       duration: 600,
-      distance: '40px',
+      distance: '20px',
       easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
       origin: 'right',
       viewFactor: 0.2
