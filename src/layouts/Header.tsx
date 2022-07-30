@@ -16,8 +16,8 @@ const Header: React.FC<App.HeaderProps> = (props) => {
         <div className="site-header-inner">
           <div className="brand header-brand">
             <h1 className="m-0">
-              <img className="header-logo-image asset-light" src={logoLight} alt="Logo" />
-              <img className="header-logo-image asset-dark" src={logoDark} alt="Logo" />
+              <img className="header-logo-image asset-light" src={logoLight} alt="Logo" width={172} />
+              <img className="header-logo-image asset-dark" src={logoDark} alt="Logo" width={172} />
             </h1>
           </div>
           <div className="lights-toggle">

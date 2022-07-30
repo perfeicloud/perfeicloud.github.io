@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import logoLight from '../assets/images/logo-light.svg'
-import logoDark from '../assets/images/logo-dark.svg'
+import logoFooterLight from '../assets/images/logo-footer-light.svg'
+import logoFooterDark from '../assets/images/logo-footer-dark.svg'
 import {ReactComponent as IconWeixin} from '../assets/images/icon-weixin.svg'
 import {ReactComponent as IconQq} from '../assets/images/icon-qq.svg'
 import {ReactComponent as IconEnvelope} from '../assets/images/icon-envelope.svg'
@@ -20,8 +20,8 @@ const Footer: React.FC<App.ComponentsProps> = (props) => {
       <div className="container">
         <div className="site-footer-inner">
           <div className="brand footer-brand">
-            <img className="asset-light" src={logoLight} alt="Logo" />
-            <img className="asset-dark" src={logoDark} alt="Logo" />
+            <img className="asset-light" src={logoFooterLight} alt="Logo" width={32} />
+            <img className="asset-dark" src={logoFooterDark} alt="Logo" width={32} />
           </div>
           <ul className="footer-links list-reset">
             <li>
