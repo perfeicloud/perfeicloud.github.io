@@ -1,4 +1,5 @@
 import React from "react"
+import classNames from "classnames"
 import logoLight from '../assets/images/logo-light.svg'
 import logoDark from '../assets/images/logo-dark.svg'
 import {ReactComponent as IconWeixin} from '../assets/images/icon-weixin.svg'
@@ -9,8 +10,13 @@ import {ReactComponent as IconMapMarker} from '../assets/images/icon-map-marker-
 
 const Footer: React.FC<App.ComponentsProps> = (props) => {
 
+  const footerClasses = classNames(
+    'site-footer',
+    props.className
+  )
+
   return (
-    <footer className="site-footer has-top-divider">
+    <footer className={footerClasses}>
       <div className="container">
         <div className="site-footer-inner">
           <div className="brand footer-brand">

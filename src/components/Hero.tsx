@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import headerIllustrationLight from '../assets/images/header-illustration-light.svg'
 import headerIllustrationDark from '../assets/images/header-illustration-dark.svg'
 import heroIllustrationMediaLight from '../assets/images/hero-media-illustration-light.svg'
@@ -7,8 +8,13 @@ import {ReactComponent as HeroMedia} from '../assets/images/hero-media.svg'
 
 const Hero: React.FC<App.HeroProps> = (props) => {
 
+  const heroClasses = classNames(
+    'hero',
+    props.className
+  )
+
   return (
-    <section className="hero">
+    <section className={heroClasses}>
       <div className="container">
         <div className="hero-inner">
           <div className="hero-copy">

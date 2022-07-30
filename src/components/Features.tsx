@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import classNames from "classnames"
 import featuresIllustrationLight from '../assets/images/features-illustration-light.svg'
 import featuresIllustrationDark from '../assets/images/features-illustration-dark.svg'
@@ -12,8 +12,13 @@ import featuresIcon4 from '../assets/images/feature-icon-4.png'
 
 const Features: React.FC<App.FeaturesProps> = (props) => {
 
+  const featuresClasses = classNames(
+    'features',
+    props.className
+  )
+
   return (
-    <section className="features section">
+    <section className={featuresClasses}>
       <div className="container">
         <div className="features-inner section-inner has-bottom-divider">
           <div className="features-header text-center">

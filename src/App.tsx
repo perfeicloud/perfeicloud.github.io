@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ScrollReveal from 'scrollreveal'
 import { Header, Main, Footer } from './layouts'
 import { Hero, Features, Cta } from './components'
@@ -25,10 +25,9 @@ const App: React.FC = () => {
     setDarkMode(value)
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     // body loaded
-    document.body.classList.add('is-loaded')
-    document.body.classList.add('is-boxed')
+    document.body.classList.add('is-loaded', 'is-boxed')
     // set page dark mode
     if (!isDark) {
       document.body.classList.remove('lights-off')
@@ -50,10 +49,10 @@ const App: React.FC = () => {
       <Header isDark={isDark} handleIsDark={changeIsDark} />
       <Main>
         <Hero />
-        <Features />
-        <Cta />
+        <Features className='section'/>
+        <Cta className='section'/>
       </Main>
-      <Footer />
+      <Footer className='has-top-divider'/>
     </>
   )
 }

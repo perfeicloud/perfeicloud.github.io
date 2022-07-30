@@ -1,10 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 import classNames from "classnames"
 
 const Cta: React.FC<App.CtaProps> = (props) => {
 
+  const ctaClasses = classNames(
+    'cta',
+    props.className
+  )
+
   return (
-    <section className="cta section">
+    <section className={ctaClasses}>
       <div className="container-sm">
         <div className="cta-inner section-inner">
           <div className="cta-header text-center">
