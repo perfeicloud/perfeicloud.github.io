@@ -1,65 +1,72 @@
 import React from "react"
 import logoLight from '../assets/images/logo-light.svg'
 import logoDark from '../assets/images/logo-dark.svg'
+import {ReactComponent as IconWeixin} from '../assets/images/icon-weixin.svg'
+import {ReactComponent as IconQq} from '../assets/images/icon-qq.svg'
+import {ReactComponent as IconEnvelope} from '../assets/images/icon-envelope.svg'
+import {ReactComponent as IconPhone} from '../assets/images/icon-phone.svg'
+import {ReactComponent as IconMapMarker} from '../assets/images/icon-map-marker-alt.svg'
 
 const Footer: React.FC<App.ComponentsProps> = (props) => {
-
-  console.log('[Footer] rendered.')
 
   return (
     <footer className="site-footer has-top-divider">
       <div className="container">
         <div className="site-footer-inner">
           <div className="brand footer-brand">
-            <a href="#">
-              <img className="asset-light" src={logoLight} alt="Logo" />
-              <img className="asset-dark" src={logoDark} alt="Logo" />
-            </a>
+            <img className="asset-light" src={logoLight} alt="Logo" />
+            <img className="asset-dark" src={logoDark} alt="Logo" />
           </div>
           <ul className="footer-links list-reset">
             <li>
-              <a href="#">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
             <li>
-              <a href="#">About us</a>
+              <a href="#aboutus">About us</a>
             </li>
             <li>
-              <a href="#">FAQ's</a>
+              <a href="#faqs">FAQ's</a>
             </li>
             <li>
-              <a href="#">Support</a>
+              <a href="#support">Support</a>
             </li>
           </ul>
           <ul className="footer-social-links list-reset">
             <li>
-              <a href="#">
-                <span className="screen-reader-text">Facebook</span>
-                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z" fill="#FFF"/>
-                </svg>
+              <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg3OTY2NTE0Mg==&scene=124#wechat_redirect">
+                <span className="screen-reader-text">Weixin</span>
+                <IconWeixin width={16} height={16} />
               </a>
             </li>
             <li>
-              <a href="#">
-                <span className="screen-reader-text">Twitter</span>
-                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z" fill="#FFF"/>
-                </svg>
+              <a href="http://wpa.qq.com/msgrd?v=3&uin=54308828&site=qq&Menu=yes">
+                <span className="screen-reader-text">QQ</span>
+                <IconQq width={16} height={16} />
               </a>
             </li>
             <li>
-              <a href="#">
-                <span className="screen-reader-text">Google</span>
-                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" fill="#FFF"/>
-                </svg>
+              <a href="mailto:service@perfei.com">
+                <span className="screen-reader-text">Email</span>
+                <IconEnvelope width={16} height={16} />
+              </a>
+            </li>
+            <li>
+              <a href="tel:+8675561351272">
+                <span className="screen-reader-text">Phone</span>
+                <IconPhone width={16} height={16} />
+              </a>
+            </li>
+            <li>
+              <a href="https://j.map.baidu.com/85/JUd">
+                <span className="screen-reader-text">Map</span>
+                <IconMapMarker width={16} height={16} />
               </a>
             </li>
           </ul>
           <div className="footer-copyright">
             &copy; 2022 深圳鹏辉计算机技术有限公司
           </div>
-          <div className="footer-links"><a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备20040358号</a></div>
+          <div className="footer-links"><a href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备20040358号</a></div>
         </div>
       </div>
     </footer>

@@ -3,8 +3,6 @@ import classNames from 'classnames'
 
 const Main: React.FC<App.MainProps> = (props) => {
 
-  console.log('[Main] rendered.')
-
   const mainClasses = classNames(
     props.className
   )
