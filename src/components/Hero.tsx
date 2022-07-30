@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import headerIllustrationLight from '../assets/images/header-illustration-light.svg'
 import headerIllustrationDark from '../assets/images/header-illustration-dark.svg'
 import heroIllustrationMediaLight from '../assets/images/hero-media-illustration-light.svg'
 import heroIllustrationMediaDark from '../assets/images/hero-media-illustration-dark.svg'
-import heroMediaLight from '../assets/images/hero-media-light.svg'
-import heroMediaDark from '../assets/images/hero-media-dark.svg'
+import {ReactComponent as HeroMedia} from '../assets/images/hero-media.svg'
 
 const Hero: React.FC<App.HeroProps> = (props) => {
 
@@ -33,8 +32,7 @@ const Hero: React.FC<App.HeroProps> = (props) => {
               <img className="hero-media-illustration-image asset-dark" src={heroIllustrationMediaDark} alt="Hero media illustration" />
             </div>
             <div className="hero-media-container">
-              <img className="hero-media-image asset-light" src={heroMediaLight} alt="Hero media" />
-              <img className="hero-media-image asset-dark" src={heroMediaDark} alt="Hero media" />
+              <HeroMedia width={538} height={380} className='hero-media-image' />
             </div>
           </div>
         </div>
