@@ -8,6 +8,21 @@ import {ReactComponent as IconEnvelope} from '../assets/images/icon-envelope.svg
 import {ReactComponent as IconPhone} from '../assets/images/icon-phone.svg'
 import {ReactComponent as IconMapMarker} from '../assets/images/icon-map-marker-alt.svg'
 
+const CopyRight = () => {
+  const currentYear = new Date().getFullYear()
+  const organizationName = '深圳鹏辉计算机技术有限公司'
+  return (
+    <span>{`© ${currentYear} ${organizationName}`}</span>
+  )
+}
+
+const IcpFiling = () => {
+  const IcpNumber = '粤ICP备20040358号'
+  return (
+    <><a href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">{IcpNumber}</a></>
+  )
+}
+
 const Footer: React.FC<App.ComponentsProps> = (props) => {
 
   const footerClasses = classNames(
@@ -70,9 +85,11 @@ const Footer: React.FC<App.ComponentsProps> = (props) => {
             </li>
           </ul>
           <div className="footer-copyright">
-            &copy; 2022 深圳鹏辉计算机技术有限公司
+            <CopyRight />
           </div>
-          <div className="footer-links"><a href="http://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备20040358号</a></div>
+          <div className="footer-links">
+            <IcpFiling />
+          </div>
         </div>
       </div>
     </footer>
