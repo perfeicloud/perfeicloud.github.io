@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import ScrollReveal from 'scrollreveal'
 import { Header, Main, Footer } from './layouts'
 import { Hero, Features, Cta } from './components'
+import LightsOffContext from './components/LightsOffContext'
 
 const App: React.FC = () => {
 
-  const [isDark, setIsDark] = useState<boolean>(initIsDark() ?? false)
+  const [lightsOff, setLights] = useState<boolean>(initLights() ?? false)
 
   // component mounted
   useEffect(() => {
@@ -21,10 +22,10 @@ const App: React.FC = () => {
     })
   }, [])
 
-  // isDark updated
+  // lightsOff updated
   useEffect(() => {
     // set page dark mode
-    if (isDark) {
+    if (lightsOff) {
       document.body.classList.add('lights-off')
     } else {
       document.body.classList.remove('lights-off')
@@ -32,12 +33,12 @@ const App: React.FC = () => {
     // set cookie
     const d = new Date()
     d.setTime(d.getTime() + 24*3600*1000)
-    document.cookie = `isDark=${isDark?'1':'0'};expires=${d.toUTCString()}`
-  }, [isDark])
+    document.cookie = `lightsOff=${lightsOff?'1':'0'};expires=${d.toUTCString()}`
+  }, [lightsOff])
 
-  function initIsDark() {
+  function initLights() {
     // get cookie
-    let arr, reg = new RegExp("(^| )isDark=([^;]*)(;|$)")
+    let arr, reg = new RegExp("(^| )lightsOff=([^;]*)(;|$)")
     if (arr = document.cookie.match(reg)) {
       return (arr[2] === '1' ? true : false)
     }
@@ -46,15 +47,15 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
-      <Header isDark={isDark} handleIsDark={setIsDark} />
+    <LightsOffContext.Provider value={lightsOff}>
+      <Header handleLightsOff={setLights} />
       <Main>
         <Hero />
         <Features className='section'/>
         <Cta className='section'/>
       </Main>
       <Footer className='has-top-divider'/>
-    </>
+    </LightsOffContext.Provider>
   )
 }
 

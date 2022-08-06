@@ -9,10 +9,7 @@ declare namespace App {
   }
 
   interface HeaderProps extends ComponentsProps {
-    isDark: boolean
-    handleIsDark: Function
-    hideNav?: boolean
-    hideSignin?: boolean
+    handleLightsOff: Function
   }
 
   interface MainProps extends ComponentsProps {

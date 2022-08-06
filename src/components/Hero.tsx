@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classNames from 'classnames'
-import headerIllustrationLight from '../assets/images/header-illustration-light.svg'
-import headerIllustrationDark from '../assets/images/header-illustration-dark.svg'
-import heroIllustrationMediaLight from '../assets/images/hero-media-illustration-light.svg'
-import heroIllustrationMediaDark from '../assets/images/hero-media-illustration-dark.svg'
+import LightsOffContext from '../components/LightsOffContext'
+import { ReactComponent as HeaderIllustrationLight } from '../assets/images/header-illustration-light.svg'
+import { ReactComponent as HeaderIllustrationDark } from '../assets/images/header-illustration-dark.svg'
+import { ReactComponent as HeroIllustrationMediaLight } from '../assets/images/hero-media-illustration-light.svg'
+import { ReactComponent as HeroIllustrationMediaDark } from '../assets/images/hero-media-illustration-dark.svg'
 import {ReactComponent as HeroMedia} from '../assets/images/hero-media.svg'
 
 const Hero: React.FC<App.HeroProps> = (props) => {
+
+  const lightsOff = useContext(LightsOffContext)
 
   const heroClasses = classNames(
     'hero',
@@ -30,12 +33,18 @@ const Hero: React.FC<App.HeroProps> = (props) => {
           </div>
           <div className="hero-media">
             <div className="header-illustration">
-              <img className="header-illustration-image asset-light" src={headerIllustrationLight} alt="Header illustration" />
-              <img className="header-illustration-image asset-dark" src={headerIllustrationDark} alt="Header illustration" />
+            {
+              lightsOff ?
+              <HeaderIllustrationDark className='header-illustration-image' /> :
+              <HeaderIllustrationLight className='header-illustration-image' />
+            }
             </div>
             <div className="hero-media-illustration">
-              <img className="hero-media-illustration-image asset-light" src={heroIllustrationMediaLight} alt="Hero media illustration" />
-              <img className="hero-media-illustration-image asset-dark" src={heroIllustrationMediaDark} alt="Hero media illustration" />
+            {
+              lightsOff ?
+              <HeroIllustrationMediaDark className='hero-media-illustration-image' /> :
+              <HeroIllustrationMediaLight className='hero-media-illustration-image' />
+            }
             </div>
             <div className="hero-media-container">
               <HeroMedia width={538} height={380} className='hero-media-image' />
