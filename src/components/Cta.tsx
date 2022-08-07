@@ -25,7 +25,7 @@ const Cta: React.FC<App.CtaProps> = (props) => {
               {cta.paragraph}
             </p>
             <div className="cta-cta">
-              <a className="button button-primary" href="#">{cta.btnCaption}</a>
+              <a className="button button-primary" href={cta.btnHref}>{cta.btnCaption}</a>
             </div>
           </div>
         </div>
