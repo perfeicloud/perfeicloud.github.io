@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import classNames from "classnames"
 import LightsOffContext from '../components/LightsOffContext'
-import { ReactComponent as FeaturesIllustrationLight } from '../assets/images/features-illustration-light.svg'
-import { ReactComponent as FeaturesIllustrationDark } from '../assets/images/features-illustration-dark.svg'
-import { ReactComponent as FeaturesIllustrationTopLight } from '../assets/images/features-illustration-top-light.svg'
-import { ReactComponent as FeaturesIllustrationTopDark } from '../assets/images/features-illustration-top-dark.svg'
+import featuresIllustrationLight from '../assets/images/features-illustration-light.svg'
+import featuresIllustrationDark from '../assets/images/features-illustration-dark.svg'
+import featuresIllustrationTopLight from '../assets/images/features-illustration-top-light.svg'
+import featuresIllustrationTopDark from '../assets/images/features-illustration-top-dark.svg'
 import {ReactComponent as FeaturesBox} from '../assets/images/features-box.svg'
 import featuresIcon1 from '../assets/images/feature-icon-1.png'
 import featuresIcon2 from '../assets/images/feature-icon-2.png'
@@ -47,6 +47,10 @@ const Features: React.FC<App.FeaturesProps> = (props) => {
     'features',
     props.className
   )
+  const featuresIllustrationClasses = classNames(
+    'features-illustration',
+    lightsOff ? 'asset-dark' : 'asset-light'
+  )
 
   return (
     <section className={featuresClasses}>
@@ -59,19 +63,17 @@ const Features: React.FC<App.FeaturesProps> = (props) => {
                 return <p className="section-paragraph" key={index}>{item}</p>
               })}
               <div className="features-image">
-              {
-                lightsOff ?
-                (<>
-                  <FeaturesIllustrationDark className="features-illustration" />
-                  <FeaturesIllustrationTopDark className="features-illustration" />
-                </>) :
-                (<>
-                  <FeaturesIllustrationLight className="features-illustration" />
-                  <FeaturesIllustrationTopLight className="features-illustration" />
-                </>)
-              }
-                
+                <img
+                  className={featuresIllustrationClasses}
+                  src={lightsOff ? featuresIllustrationDark : featuresIllustrationLight}
+                  alt="Feature illustration"
+                />
                 <FeaturesBox width={538} height={380} className='features-box' />
+                <img
+                  className={featuresIllustrationClasses}
+                  src={lightsOff ? featuresIllustrationTopDark : featuresIllustrationTopLight}
+                  alt="Feature illustration top"
+                />
               </div>
             </div>
           </div>
