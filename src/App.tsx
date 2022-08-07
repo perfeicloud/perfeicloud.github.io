@@ -36,16 +36,6 @@ const App: React.FC = () => {
     document.cookie = `lightsOff=${lightsOff?'1':'0'};expires=${d.toUTCString()}`
   }, [lightsOff])
 
-  function initLights() {
-    // get cookie
-    let arr, reg = new RegExp("(^| )lightsOff=([^;]*)(;|$)")
-    if (arr = document.cookie.match(reg)) {
-      return (arr[2] === '1' ? true : false)
-    }
-    // get system theme mode
-    return (window.matchMedia('(prefers-color-scheme: dark)').matches)
-  }
-
   return (
     <LightsOffContext.Provider value={lightsOff}>
       <Header handleLightsOff={setLights} />
@@ -57,6 +47,16 @@ const App: React.FC = () => {
       <Footer className='has-top-divider'/>
     </LightsOffContext.Provider>
   )
+}
+
+function initLights() {
+  // get cookie
+  let arr, reg = new RegExp("(^| )lightsOff=([^;]*)(;|$)")
+  if (arr = document.cookie.match(reg)) {
+    return (arr[2] === '1' ? true : false)
+  }
+  // get system theme mode
+  return (window.matchMedia('(prefers-color-scheme: dark)').matches)
 }
 
 export default App
