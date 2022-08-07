@@ -21,8 +21,8 @@ const Header: React.FC<App.HeaderProps> = (props) => {
             <h1 className="m-0">
             {
               lightsOff ?
-              <LogoDark className='header-logo-image' width={172} /> :
-              <LogoLight className='header-logo-image'  width={172} />
+              <LogoDark className='header-logo-image' height={52} /> :
+              <LogoLight className='header-logo-image'  height={52} />
             }
             </h1>
           </div>
